@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Variables</title>
+</head>
+<body>
+<!--
+-Biến js có thể được khai báo theo 4 cách: Tự động, var, let, const
+
+1. Luôn khai báo biến
+
+2. Luôn sử dụng const nếu giá trị không nên thay đổi
+
+3. Chỉ dùng let nếu không dùng được const
+
+- Tất cả các biến JavaScript phải được xác định bằng các tên duy nhất.
+
+- Tên có thể chứa các chữ cái, chữ số, dấu gạch dưới và ký hiệu đô la.
+
+- Tên phải bắt đầu bằng một chữ cái.
+
+- Tên cũng có thể bắt đầu bằng $ và _
+
+- Tên phân biệt chữ hoa chữ thường
+
+- Không thể sử dụng các từ dành riêng (như từ khóa JavaScript) làm tên.
+-->
+<p id="auto"></p>
+<p id="var"></p>
+<p id="let"></p>
+<p id="const"></p>
+<script>
+//x, y, z tự động khai báo
+x = 27
+y = 10
+z = x + y
+document.querySelector("#auto").innerHTML = `Giá trị của z là: ${z}`
+
+//khai báo các biến a, b, c bằng var
+a = 10
+b = 10
+c = a + b
+document.querySelector("#var").innerHTML = `Giá trị của c là: ${c}`
+
+//Khai báo các biến d, e ,f bằng let
+let d = 12
+let e = 6
+let f = 12 + 6
+document.querySelector("#let").innerHTML = `Giá trị của f là: ${f}`
+
+//Khai báo các biến h, i, k bằng const
+const h = 96
+const i = 68
+const k = 96 + 68
+document.querySelector("#const").innerHTML = `Giá trị của k là: ${k}`
+</script>
+</body>
+</html>

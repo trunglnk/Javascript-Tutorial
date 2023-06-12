@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Let</title>
+</head>
+<body>
+<!--
+Các biến được xác định bằng let không thể được khai báo lại .
+
+Các biến được định nghĩa bằng let phải được khai báo trước khi sử dụng .
+
+Các biến được định nghĩa với let phạm vi khối (biến được khai báo bên trong khối { } không thể được truy cập từ bên ngoài khối) .-->
+<p id ="demo"></p>
+<script>
+  let  x = 10;
+
+  {
+    let x = 2;
+  }
+
+  document.getElementById("demo").innerHTML = `Gía trị của x là: ${x}`;
+</script>
+</body>
+</html>

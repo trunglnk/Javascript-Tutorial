@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Toán tử gán</title>
+</head>
+<body>
+<!--Các toán tử gán trong js: =, +=, -=, *=, %=, /= , **=-->
+<p id="demo"></p>
+<p id="demo1"></p>
+<script>
+    //Toán tử =
+    let x = 10
+    let y = 10 + x
+    document.querySelector("#demo").innerHTML  = `Y có giá trị là: ${y}`
+
+    //Toán tử +=, -=, *=, /=, %=, **=
+    let a = 20
+    a += 5
+
+    let b = 10
+    b -= 2
+
+    let c = 12
+    c *= 5
+
+    let d = 14
+    d /= 2
+
+    let e = 15
+    e %= 2
+
+    let f = 15
+    f **= 2
+    document.querySelector("#demo1").innerHTML = `Kết quả a += 5 là: ${a} <br>
+                                                  Kết quả b -= 2 là: ${b} <br>
+                                                  Kết quả của c *= 5 là: ${c} <br>
+                                                  Kết quả của d /= 2 là: ${d} <br>
+                                                  Kết quả của e %= 2 là: ${e} <br>
+                                                  Kết quả của f **= 2 là ${f}`
+</script>
+</body>
+</html>

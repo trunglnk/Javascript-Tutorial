@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Typeof</title>
+</head>
+<body>
+<!--
+Trong JavaScript có 5 loại dữ liệu khác nhau có thể chứa giá trị:
+
+- string
+- number
+- boolean
+- object
+- function
+
+Có 6 loại đối tượng:
+
+- Object
+- Date
+- Array
+- String
+- Number
+- Boolean
+
+Và 2 kiểu dữ liệu không được chứa giá trị:
+
+- null
+- undefined
+
+DỮ LIỆU NGUYÊN THỦY
+Toán typeoftử có thể trả về một trong các kiểu nguyên thủy sau:
+
+- string
+- number
+- boolean
+- undefined
+
+DỮ LIỆU PHỨC TẠP
+Toán typeoftử có thể trả về một trong hai loại phức tạp:
+
+- function
+- object
+Toán typeoftử trả về "đối tượng" cho các đối tượng, mảng và null.
+
+Toán typeoftử không trả về "đối tượng" cho các hàm.
+-->
+
+<p id="demo"></p>
+<p id="demo1"></p>
+<script>
+    // Sử dụng typeof toán tử để tìm loại dữ liệu của biến JavaScript
+    document.getElementById("demo").innerHTML =
+        "'John' is " + typeof "John" + "<br>" +
+        "3.14 is " + typeof 3.14 + "<br>" +
+        "NaN is " + typeof NaN + "<br>" +
+        "false is " + typeof false + "<br>" +
+        "[1, 2, 3, 4] is " + typeof [1, 2, 3, 4] + "<br>" +
+        "{name:'John', age:34} is " + typeof {name:'John', age:34} + "<br>" +
+        "new Date() is " + typeof new Date() + "<br>" +
+        "function () {} is " + typeof function () {} + "<br>" +
+        "myCar is " + typeof myCar + "<br>" +
+        "null is " + typeof null;
+
+    //DỮ liệu nguyên thủy
+    typeof "John"              // Returns "string"
+    typeof 3.14                // Returns "number"
+    typeof true                // Returns "boolean"
+    typeof false               // Returns "boolean"
+    typeof x                   // Returns "undefined" (if x has no value)
+
+    //DỮ LIỆU PHỨC TẠP
+    typeof {name:'John', age:34} // Returns "object"
+    typeof [1,2,3,4]             // Returns "object" (not "array", see note below)
+    typeof null                  // Returns "object"
+    typeof function myFunc(){}   // Returns "function"
+
+    //constructor Property: Trả về hàm tạo cho tất cả các biến Js
+    "John".constructor                // Returns function String()
+   (3.14).constructor                 // Returns function Number()
+    false.constructor                 // Returns function Boolean()
+    [1,2,3,4].constructor             // Returns function Array()
+    {name:'John', age:34}.constructor  // Returns function Object()
+    new Date().constructor            // Returns function Date()
+    function () {}.constructor        // Returns function Function()
+
+    //Kiểm tra đối tượng có phải hàm array hay k
+    const fruit = ["cam", "quyt", "dua", "xoai"]
+
+    document.querySelector("#demo1").innerHTML = isArray(fruit)
+
+    function isArray(array){
+        return isArray.constructor === Array;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi loại</title>
+</head>
+<body>
+<!--
+- Chuyển đổi chuỗi thành số
+- Chuyển đổi số thành chuỗi
+- Chuyển đổi ngày thành số
+- Chuyển đổi số thành ngày
+- Chuyển đổi Booleans thành số
+- Chuyển đổi số thành Booleans
+
+PHƯƠNG THỨC CHUYỂN ĐỔI NGÀY THÀNH CHUỖI
+- getDate(): trả về ngày trong tháng(1-31)
+- getDay(): trả về ngày trong tuần(0-6)
+- getFullYear(): trả về năm
+- getHours(): trả về giờ
+- getMonth(): trả về tháng
+-->
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<script>
+  document.getElementById("demo").innerHTML =
+          Number("3.14") + "<br>" +
+          Number(Math.PI) + "<br>" +
+          Number("    ") + "<br>" +
+          Number("") + "<br>" +
+          Number("99 88") + "<br>" +
+          Number("John") + "<br>";
+
+  //CHUYỂN ĐỐI SỐ THÀNH CHUỖI
+      let x = 123;
+      document.getElementById("demo1").innerHTML =
+      String(x) + "<br>" +
+      String(123) + "<br>" +
+          String(100 + 23);
+
+  //TO STRING
+  let y = 456;
+  document.getElementById("demo2").innerHTML =
+      y.toString() + "<br>" +
+      (123).toString() + "<br>" +
+      (100 + 23).toString();
+
+  //CHUYỂN ĐỔI LOẠI TỰ ĐỘNG
+  document.getElementById("demo3").innerHTML =
+      (5 + null) + "<br>"  +
+      ("5" + null) + "<br>" +
+      ("5" + 2) + "<br>" +
+      ("5" - 2) + "<br>" +
+      ("5" * "2") + "<br>" +
+      ("5" / "2") + "<br>"
+</script>
+</body>
+</html>

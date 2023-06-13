@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Toán tử ưu tiên</title>
+</head>
+<body>
+<!--
+- Thứ tự ưu tiên của toán tử mô tả thứ tự các phép toán được thực hiện trong một biểu thức số học.
+
+- Phép nhân ( *) và phép chia ( /) được ưu tiên cao hơn phép cộng ( +) và phép trừ ( -).
+
+- Khi sử dụng dấu ngoặc đơn, các phép toán bên trong dấu ngoặc đơn được tính trước
+
+- Các hoạt động có cùng mức độ ưu tiên (như * và /) được tính từ trái sang phải
+-->
+<p id="demo"></p>
+<p id="demo1"></p>
+<script>
+  document.getElementById("demo").innerHTML = 100 + 50 * 3;
+
+  //SỬ DỤNG DẤU NGOẶC ĐƠN ()
+  document.getElementById("demo1").innerHTML = (100 + 50) * 3;
+</script>
+</body>
+</html>

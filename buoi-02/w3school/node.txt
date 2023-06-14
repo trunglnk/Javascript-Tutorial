@@ -1,0 +1,68 @@
+1. Các cách khai báo biến?
+4 cách: auto, sử dụng var, let,const
+
+2.Khi nào nên sử dụng var, let, const
+-var: Được sử dụng để khai báo biến toàn cục hoặc cục bộ.
+      Có thể gán lại giá trị và được khởi tạo với undefined mặc định.
+      Có thể ghi đè khi bị khai báo lại -> gây ra lỗi
+
+-let: không thể được khai báo lại.
+      phải được khai báo trước khi sử dụng.
+      có phạm vi khối
+
+-const: Được sử dụng để khai báo một hằng số không thay đổi giá trị: mảng mới, đối tượng mới...
+
+3.Quy tắc chung để đặt tên cho biến
+- Tất cả các biến JavaScript phải được xác định bằng các tên duy nhất.
+
+- Tên có thể chứa các chữ cái, chữ số, dấu gạch dưới và ký hiệu đô la.
+
+- Tên phải bắt đầu bằng một chữ cái.
+
+- Tên cũng có thể bắt đầu bằng $ và _
+
+- Tên phân biệt chữ hoa chữ thường
+
+- Không thể sử dụng các từ dành riêng (như từ khóa JavaScript) làm tên.
+
+
+4. Kiểu của biến sau khi khai báo là gì?
+undefined
+
+5.Có bao nhiêu phạm vi
+phạm vi toàn cục (global scope), phạm vi địa phương (local scope) và phạm vi khối (block scope).
+- Biến được khai báo trong phạm vi global có thể truy cập được từ bất kỳ đâu trong chương trình,
+còn biến được khai báo trong phạm vi local chỉ có thể truy cập được từ bên trong hàm hoặc khối lệnh đó.
+
+6. Khi nào sử dụng const
+Sử dụng const khi bạn khai báo:
+
+Một mảng mới
+Đối tượng mới
+Một chức năng mới
+Một RegExp mới
+
+7. Thứ tự thực hiện trong js
+- Mã toàn cầu được thực thi trước.
+- Các khai báo hàm sau đó được xử lý.
+- Mã cục bộ trong các chức năng được xử lý khi các chức năng được gọi.
+- Bất kỳ câu lệnh hoặc biểu thức nào trong một khối được thực hiện theo thứ tự nó xuất hiện.
+- Nếu có các hàm hoặc khối lồng nhau, thì khối trong cùng được thực hiện trước, tiếp theo là các khối bên ngoài.
+
+8. Gía trị rông có phải kiểu undefined k
+có.Nó chỉ ra rằng một biến hoặc thuộc tính chưa được gán giá trị hoặc một hàm không có giá trị trả về.
+
+9. các loại dữ liệu khác nhau
+Trong JavaScript có 5 loại dữ liệu khác nhau có thể chứa giá trị:
+
+- string
+- number
+- boolean
+- object
+- function
+
+10.các cách khac nhau kiem tra loai bien
+typeof, su dung constructor(trả về hàm tạo cho tất cả các biến JavaScript.)
+
+11. Những cách để xóa biến
+sử dung delete, set null

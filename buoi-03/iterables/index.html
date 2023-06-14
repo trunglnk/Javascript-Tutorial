@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iterables</title>
+</head>
+<body>
+<!--Iterables là các đối tượng có thể lặp lại (như Mảng).
+
+    Iterables có thể được truy cập bằng mã đơn giản và hiệu quả.
+
+    Iterables có thể được lặp đi lặp lại với các vòng lặp for..of-->
+<div id="demo"></div>
+<div id="demo1"></div>
+<div id="demo2"></div>
+<div id="demo3"></div>
+<script>
+  //Iterating Over a String
+  const name = "W3Schools";
+
+  let text = ""
+  for (const x of name) {
+    text += x + "<br>";
+  }
+
+  document.getElementById("demo").innerHTML = text;
+
+  //Iterating Over an Array
+  const cars = ["kia","bmw","mer"];
+
+  let text1 = "";
+  for (const x of cars) {
+    text1 += x + "<br>";
+  }
+
+  document.getElementById("demo1").innerHTML = text1;
+
+  //Iterating Over a Set
+  const letters = new Set(["a","b","c"]);
+
+  let text2 = "";
+  for (const x of letters) {
+    text2 += x + "<br>";
+  }
+
+  document.getElementById("demo2").innerHTML = text2;
+
+  //Iterating Over a Map
+  const fruits = new Map([
+    ["apples", 500],
+    ["bananas", 300],
+    ["oranges", 200]
+  ]);
+
+  let text3 = "";
+  for (const x of fruits) {
+    text3 += x + "<br>";
+  }
+
+  document.getElementById("demo3").innerHTML = text3;
+</script>
+</body>
+</html>

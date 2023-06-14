@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For_of</title>
+</head>
+<body>
+<!--Câu lệnh for of của JavaScript lặp qua các giá trị của một đối tượng có thể lặp lại.
+
+Nó cho phép bạn lặp qua các cấu trúc dữ liệu có thể lặp lại như Mảng, Chuỗi, Bản đồ, NodeLists, v.v.:
+Syntax: for (variable of iterable) {
+  // code block to be executed
+}
+-->
+<p id="demo"></p>
+<p id="demo1"></p>
+
+<script>
+  //Vòng lặp trên một mảng
+  const cars = ["BMW", "Volvo", "Mini"];
+
+  let text = "";
+  for (let x of cars) {
+    text += x + "<br>";
+  }
+
+  document.getElementById("demo").innerHTML = text;
+
+  //Vòng qua một chuỗi
+  let language = "JavaScript";
+
+  let text1 = "";
+  for (let x of language) {
+    text1 += x + "<br/>";
+  }
+  document.getElementById("demo1").innerHTML = text1;
+</script>
+</body>
+</html>

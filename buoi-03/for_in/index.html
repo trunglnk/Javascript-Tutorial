@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For_in</title>
+</head>
+<body>
+<!--For_in lặp qua các thuộc tính của đối tượng
+syntax: for (key in object) {
+  // code block to be executed
+}
+-->
+<div id="demo"></div>
+<div id="demo1"></div>
+<div id="demo2"></div>
+<script>
+    let txt = ""
+    const employee = {name: "Trung", age: 25, job: "dev"}
+    for(let x in employee){
+        txt += employee[x] + " "
+    }
+
+    document.querySelector("#demo").innerHTML = txt
+
+    //FOR IN OVER ARAY
+    let text = ""
+    const myArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    for(let x in myArr){
+        text += myArr[x] + " "
+    }
+    document.querySelector("#demo1").innerHTML = text
+
+    // - Không sử dụng for trong một Mảng nếu thứ tự chỉ mục là quan trọng.
+    //
+    // - Thứ tự chỉ mục phụ thuộc vào việc triển khai và các giá trị mảng có thể không được truy cập theo thứ tự bạn mong đợi.
+    //
+    // - Tốt hơn là sử dụng vòng lặp for, vòng lặp for hoặc Array.forEach() khi thứ tự quan trọng.
+
+    const numbers = [45, 4, 9, 16, 25];
+
+    let txt2 = "";
+    numbers.forEach(myFunction);
+    document.getElementById("demo2").innerHTML = txt2;
+
+    function myFunction(value) {
+        txt2 += value + "<br>";
+    }
+
+</script>
+</body>
+</html>

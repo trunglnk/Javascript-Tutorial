@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>If_else</title>
+</head>
+<body>
+<!--Các câu điều kiện
+    - Sử dụng if để chỉ định một khối mã sẽ được thực thi, nếu một điều kiện đã chỉ định là đúng
+    - Sử dụng else để chỉ định một khối mã sẽ được thực thi, nếu điều kiện tương tự là sai
+    - Sử dụng else ifđể chỉ định một điều kiện mới để kiểm tra, nếu điều kiện đầu tiên là sai
+    - Sử dụng switch để chỉ định nhiều khối mã thay thế sẽ được thực thi
+-->
+<div id="demo"></div>
+<script>
+    const time = new Date().getHours()
+    let message
+    if(time < 12){
+        message = "Good morning"
+    }else if(time < 17){
+        message = "Good afternoon"
+    }else{
+        message = "Good evening"
+    }
+
+    document.querySelector("#demo").innerHTML = message
+</script>
+</body>
+</html>

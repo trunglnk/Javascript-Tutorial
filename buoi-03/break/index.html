@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Break and continue</title>
+</head>
+<body>
+<!--Câu lệnh break "nhảy ra" khỏi một vòng lặp.
+
+  - Câu lệnh continue "nhảy qua" một lần lặp trong vòng lặp-->
+<p id="demo"></p>
+<p id="demo1"></p>
+
+<script>
+  //Break
+  let text = "";
+  for (let i = 0; i < 10; i++) {
+    if (i === 3) { break; }
+    text += "The number is " + i + "<br>";
+  }
+
+  document.getElementById("demo").innerHTML = text;
+
+  //Continue: Câu lệnh continue ngắt một lần lặp (trong vòng lặp), nếu một điều kiện cụ thể xảy ra và tiếp tục với lần lặp tiếp theo trong vòng lặp.
+  let text2 = "";
+  for (let i = 0; i < 10; i++) {
+    if (i === 3) { continue; }
+    text2 += "The number is " + i + "<br>";
+  }
+  document.getElementById("demo1").innerHTML = text2;
+</script>
+</body>
+</html>

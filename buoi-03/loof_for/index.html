@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For</title>
+</head>
+<body>
+<!--Các loại vòng lặp khác nhau
+
+JavaScript hỗ trợ các loại vòng lặp khác nhau:
+
+for - lặp qua một khối mã một số lần
+
+for/in - lặp qua các thuộc tính của một đối tượng
+
+for/of - lặp qua các giá trị của một đối tượng có thể lặp lại
+
+while - lặp qua một khối mã trong khi một điều kiện cụ thể là đúng
+
+do/while - cũng lặp qua một khối mã trong khi điều kiện đã chỉ định là đúng-->
+<div id="demo"></div>
+<script>
+  let cars = ["TOYOTA", "MER", "BMW", "HUYNDAI", "VOLVO", "KIA", "FORD"]
+  for (let i = 0; i < cars.length; i++){
+    document.querySelector("#demo").innerHTML += `${cars[i]}<br/>`
+  }
+</script>
+</body>
+</html>

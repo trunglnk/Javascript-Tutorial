@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>While</title>
+</head>
+<body>
+<!--Vòng lặp while lặp qua một khối mã miễn là một điều kiện cụ thể là đúng.
+Syntax: while (condition) {
+  // code block to be executed
+
+  -Vòng lặp Do While
+Vòng lặp do while là một biến thể của vòng lặp while.
+Vòng lặp này sẽ thực thi khối mã một lần, trước khi kiểm tra xem điều kiện có đúng không, sau đó nó sẽ lặp lại vòng lặp miễn là điều kiện còn đúng.
+Syntax: do {
+  // code block to be executed
+}
+while (condition);
+}
+-->
+<div id="demo"></div>
+<div id="demo1"></div>
+<div id="demo2"></div>
+<script>
+  //while
+  let text = "";
+  let i = 0;
+  while (i < 10) {
+    text += "<br>The number is " + i;
+    i++;
+  }
+  document.getElementById("demo").innerHTML = text;
+
+  //Do_while
+  let text1 = ""
+  let j = 0;
+
+  do {
+    text1 += "<br>The number is " + j;
+    j++;
+  }
+  while (j < 10);
+
+  document.getElementById("demo1").innerHTML = text1;
+
+  //Do_while in array
+  const cars = ["BMW", "Volvo", "Saab", "Ford"];
+
+  let k = 0;
+  let text3 = "";
+  while (cars[k]) {
+    text3 += cars[k] + "<br>";
+    k++;
+  }
+
+  document.getElementById("demo2").innerHTML = text3;
+</script>
+</body>
+</html>

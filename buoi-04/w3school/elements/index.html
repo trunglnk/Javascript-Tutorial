@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Elements</title>
+</head>
+<body>
+<div id="intro"></div>
+<p></p>
+
+<div class="intro"></div>
+<script>
+  //Finding HTML Element by Id
+  const element = document.getElementById("intro");
+
+  document.getElementById("demo").innerHTML =
+          "The text from the intro paragraph is: " + element.innerHTML;
+
+  //Finding HTML Elements by Tag Name
+  const element = document.getElementsByTagName("p");
+
+  document.getElementById("demo").innerHTML = 'The text in first paragraph (index 0) is: ' + element[0].innerHTML;
+
+  //Finding HTML Elements by Class Name
+  const x = document.getElementsByClassName("intro");
+  document.getElementById("demo").innerHTML =
+      'The first paragraph (index 0) with class="intro" is: ' + x[0].innerHTML;
+
+  //Finding HTML Elements by CSS Selectors
+  const x = document.querySelectorAll("p.intro");
+  document.getElementById("demo").innerHTML =
+      'The first paragraph (index 0) with class="intro" is: ' + x[0].innerHTML;
+</script>
+</body>
+</html>

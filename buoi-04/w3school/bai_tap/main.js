@@ -1,37 +1,61 @@
-// Lấy tất cả các phần tử có lớp "dropdown"
+const menus = [
+    {
+        "name": 'Get data',
+        "url": "#",
+        "child_menu": ['Occurrences', 'GBIF API', 'Species', 'Datasets', 'Occurrence snapshots', 'Hosted portals', 'Trends']
+    },
+    {
+        "name": 'How to',
+        "url": "#",
+        "child_menu": ['Quick-start guide', 'Dataset classes', 'Data hosting', 'Standards', 'Become a publisher', 'Data quality', 'Data papers']
+    }
+];
+
+let ul = document.querySelector(".menu")
+for (let i = 0; i < menus.length; i++){
+    let li = document.createElement("li")
+    li.setAttribute("class", "dropdown")
+    let text = `<a href="#" class="dropbtn">${menus[i].name}</a>`
+    let drop = document.createElement("div")
+    drop.setAttribute("class", "dropdown-content")
+    let child = menus[i].child_menu
+    li.innerHTML = text
+    li.appendChild(drop)
+    ul.appendChild(li)
+    let content = ''
+    for (let j = 0; j < child.length; j++){
+      content += `
+          <a href="#">${child[j]}</a>
+        `
+        drop.innerHTML = content
+    }
+}
+
 var dropdowns = document.getElementsByClassName("dropdown");
 
-// Lặp qua từng phần tử dropdown
 for (var i = 0; i < dropdowns.length; i++) {
-    // Gắn sự kiện click cho mỗi phần tử dropdown
     dropdowns[i].addEventListener("click", function(event) {
-        // Ngăn chặn sự kiện click được lan truyền lên cấp cao hơn
         event.stopPropagation();
+        var isActive = this.classList.contains("active");
 
-        // Kiểm tra nếu phần tử đang có lớp "active"
-        if (this.classList.contains("active")) {
-            // Nếu có, xóa lớp "active"
-            this.classList.remove("active");
-        } else {
-            // Nếu không, thêm lớp "active"
+        closeAllDropdowns();
+
+        if (!isActive) {
             this.classList.add("active");
         }
     });
 }
 
-// Lắng nghe sự kiện click trên toàn bộ tài liệu
-document.addEventListener("click", function(event) {
-    // Lặp qua từng phần tử dropdown
+function closeAllDropdowns() {
     for (var i = 0; i < dropdowns.length; i++) {
-        // Kiểm tra xem sự kiện click có xảy ra trong dropdown hay không
-        var isClickedInsideDropdown = dropdowns[i].contains(event.target);
-
-        // Kiểm tra xem phần tử dropdown hiện tại có lớp "active" hay không
-        var isActive = dropdowns[i].classList.contains("active");
-
-        // Nếu sự kiện click không xảy ra trong dropdown và dropdown đang có lớp "active", hãy đóng dropdown
-        if (!isClickedInsideDropdown && isActive) {
+        if (dropdowns[i].classList.contains("active")) {
             dropdowns[i].classList.remove("active");
         }
+    }
+}
+
+document.addEventListener("click", function(event) {
+    if (!event.target.classList.contains("dropbtn")) {
+        closeAllDropdowns();
     }
 });

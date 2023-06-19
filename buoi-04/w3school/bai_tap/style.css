@@ -11,6 +11,9 @@ body{
     padding-left: 10px;
     padding-right: 10px;
     height: 70px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 .logo{
     display: flex;
@@ -34,7 +37,7 @@ body{
 }
 
 .menu li a {
-    color: #333;
+    color: #fff;
     text-decoration: none;
     font-size: 18px;
     padding: 0 1rem;
@@ -80,4 +83,9 @@ li.dropdown.active>a{
 }
 li.dropdown.active {
     background-color: #61a861;
+}
+
+.banner{
+    top: 0;
+    position: absolute;
 }

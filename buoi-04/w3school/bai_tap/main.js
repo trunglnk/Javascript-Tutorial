@@ -8,6 +8,21 @@ const menus = [
         "name": 'How to',
         "url": "#",
         "child_menu": ['Quick-start guide', 'Dataset classes', 'Data hosting', 'Standards', 'Become a publisher', 'Data quality', 'Data papers']
+    },
+    {
+        "name": 'Tools',
+        "url": "#",
+        "child_menu": ['IPT', 'Data validator', 'Scientific Collections', 'Suggest a dataset', 'New Data Model']
+    },
+    {
+        "name": 'Community',
+        "url": "#",
+        "child_menu": ['Participant network', 'Nodes', 'Publishers', 'Network Contact', 'Community Forum']
+    },
+    {
+        "name": 'About',
+        "url": "#",
+        "child_menu": ['News', 'Newsletters and lists', 'Events', 'Awards', 'Science Review', 'Data Use']
     }
 ];
 

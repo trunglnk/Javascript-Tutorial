@@ -78,3 +78,6 @@ li.dropdown.active>a{
     background-color: #61a861;
     color: #fff;
 }
+li.dropdown.active {
+    background-color: #61a861;
+}

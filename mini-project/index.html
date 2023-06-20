@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+<div class="navbar-me">
+    <div class="logo">
+        <img src="zyro-image.png" alt="Logo" style="margin-top: 12px;">
+        <ul class="menu">
+<!--                  <li><a href="#">Menu 1</a></li>-->
+<!--                  <li><a href="#">Menu 2</a></li>-->
+<!--                  <li class="dropdown">-->
+<!--                    <a href="#" class="dropbtn">Dropdown</a>-->
+<!--                    <div class="dropdown-content d-flex">-->
+<!--                        <div class="item-drop">-->
+<!--                        <h2>Title</h2>-->
+<!--                        <ul class="list-group">-->
+<!--                            <li><a href="#">Item 1</a></li>-->
+<!--                            <li><a href="#">Item 2</a></li>-->
+<!--                            <li><a href="#">Item 3</a></li>-->
+<!--                        </ul>-->
+<!--                        </div>-->
+<!--                        <div class="item-drop">-->
+<!--                            <h2>Title</h2>-->
+<!--                            <ul class="list-group">-->
+<!--                                <li><a href="#">Item 1</a></li>-->
+<!--                                <li><a href="#">Item 2</a></li>-->
+<!--                                <li><a href="#">Item 3</a></li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                  </li>-->
+<!--                  <li class="dropdown">-->
+<!--                    <a href="#" class="dropbtn">Dropdown</a>-->
+<!--                    <div class="dropdown-content">-->
+<!--                      <a href="#">Item 1</a>-->
+<!--                      <a href="#">Item 2</a>-->
+<!--                      <a href="#">Item 3</a>-->
+<!--                    </div>-->
+<!--                  </li>-->
+        </ul>
+    </div>
+
+    <div class="icons">
+        <a id="toggleButton" ><i class='bx bxs-user'></i></a>
+        <a href="#"><i class='bx bxs-chat'></i></a>
+        <a href="#"><i class='bx bxs-search-alt-2'></i></a>
+        <button id="login" class="btn btn-light"><a href="#">Login</a></button>
+    </div>
+</div>
+<div class="banner">
+    <div class="banner-content" onmouseover="changeBanner()">
+        <img src="banner.jpg">
+        <div class="banner-search">
+            <div class="banner-header">
+                GBIF | Global Biodiversity Information Facility
+            </div>
+            <h1>
+                Free and open access to biodiversity data
+            </h1>
+            <div class="filter-group">
+                <div class="list-group list-group-horizontal ">
+                    <a class="list-group-item text-uppercase rounded-0 border-0">Occurrences</a>
+                    <a class="list-group-item text-uppercase border-0">Species</a>
+                    <a class="list-group-item text-uppercase border-0">Datasets</a>
+                    <a class="list-group-item text-uppercase border-0">Publishers</a>
+                    <a class="list-group-item text-uppercase rounded-0 border-0">Resources</a>
+                </div>
+                <input class="input-elevated" type="text" placeholder="Search">
+                <div class="list-group list-group-horizontal ">
+                    <a class="list-group-item text-uppercase rounded-0 border-0">What is GBIF?</a>
+                    <a class="list-group-item text-uppercase border-0">About GBIF Viet Nam</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--    Login form-->
+    <div class="login-form">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#loginForm">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#regForm">Register</a>
+            </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div id="loginForm" class="container tab-pane active"><br>
+                <form>
+                    <div class="mb-3 mt-3">
+                        <label for="email" class="form-label">Username or Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="username or email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="pwd" class="form-label">Password:</label>
+                        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                    </div>
+                    <button type="submit" id="loginBtn" class="btn btn-success">Sign in</button>
+                </form>
+            </div>
+            <div id="regForm" class="container tab-pane fade"><br>
+                <form>
+                    <div class="mb-3 mt-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" class="form-control" id="res_email" placeholder="Enter email" name="Email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="pwd" class="form-label">Username:</label>
+                        <input type="text" class="form-control" id="res_username" placeholder="Enter password" name="username">
+                    </div>
+                    <div class="mb-3">
+                        <label for="pwd" class="form-label">Password:</label>
+                        <input type="password" class="form-control" id="res_password" placeholder="Enter password" name="password">
+                    </div>
+                    <button type="submit" class="btn btn-success">Sign up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--language-->
+    <div class="card" id="myCard">
+        <div class="card-header">
+            Change Language
+        </div>
+        <div class="card-body">
+<!--            <div class="form-check">-->
+<!--                <input class="form-check-input" type="radio" name="language" id="radio1" value="option1">-->
+<!--                <label class="form-check-label" for="radio1">-->
+<!--                    Option 1-->
+<!--                </label>-->
+<!--            </div>-->
+<!--            <div class="form-check">-->
+<!--                <input class="form-check-input" type="radio" name="language" id="radio2" value="option2">-->
+<!--                <label class="form-check-label" for="radio2">-->
+<!--                    Option 2-->
+<!--                </label>-->
+<!--            </div>-->
+<!--            <div class="form-check">-->
+<!--                <input class="form-check-input" type="radio" name="language" id="radio3" value="option3">-->
+<!--                <label class="form-check-label" for="radio3">-->
+<!--                    Option 3-->
+<!--                </label>-->
+<!--            </div>-->
+        </div>
+    </div>
+
+<div class="content" style="height: 1000px"></div>
+<script src="main.js"></script>
+</body>
+</html>

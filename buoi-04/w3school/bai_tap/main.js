@@ -74,3 +74,8 @@ document.addEventListener("click", function(event) {
         closeAllDropdowns();
     }
 });
+
+//Cuộn chuột đổi màu nav
+window.addEventListener('scroll', function() {
+    document.querySelector('.navbar').style.backgroundColor = "#71b171";
+});

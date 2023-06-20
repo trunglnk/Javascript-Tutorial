@@ -2,47 +2,79 @@ const menus = [
     {
         "name": 'Get data',
         "url": "#",
-        "child_menu": ['Occurrences', 'GBIF API', 'Species', 'Datasets', 'Occurrence snapshots', 'Hosted portals', 'Trends']
+        "child_menu": [
+            {
+                "title": "",
+                "menu_item": ['Occurrences', 'GBIF API', 'Species', 'Datasets', 'Occurrence snapshots', 'Hosted portals', 'Trends']
+            }
+        ]
     },
     {
         "name": 'How to',
         "url": "#",
-        "child_menu": ['Quick-start guide', 'Dataset classes', 'Data hosting', 'Standards', 'Become a publisher', 'Data quality', 'Data papers']
-    },
-    {
-        "name": 'Tools',
-        "url": "#",
-        "child_menu": ['IPT', 'Data validator', 'Scientific Collections', 'Suggest a dataset', 'New Data Model']
-    },
-    {
-        "name": 'Community',
-        "url": "#",
-        "child_menu": ['Participant network', 'Nodes', 'Publishers', 'Network Contact', 'Community Forum']
+        "child_menu": [
+            {
+                "title": "Share data",
+                "menu_item": ['Quick-start guide', 'Dataset classes', 'Data hosting', 'Standards', 'Become a publisher', 'Data quality', 'Data papers']
+            }
+        ]
     },
     {
         "name": 'About',
         "url": "#",
-        "child_menu": ['News', 'Newsletters and lists', 'Events', 'Awards', 'Science Review', 'Data Use']
+        "child_menu": [
+                {
+                    "title": "",
+                    "menu_item": ['News', 'Newsletters and lists', 'Events', 'Awards', 'Science Review', 'Data Use']
+                }
+                ]
+    },
+    {
+        "name": 'About2',
+        "url": "#",
+        "child_menu": [
+            {
+                "title": "Inside Gbif",
+                "menu_item": ['News', 'Newsletters and lists', 'Events', 'Awards', 'Science Review', 'Data Use']
+            },
+            {
+                "title": "News & outreach",
+                "menu_item": ['Becom  a member', 'Govermance', 'Funders']
+            }
+        ]
     }
 ];
 
 let ul = document.querySelector(".menu")
-for (let i = 0; i < menus.length; i++){
-    let li = document.createElement("li")
-    li.setAttribute("class", "dropdown")
+for(let i = 0; i < menus.length; i++){
+    let liParen = document.createElement("li")
+    liParen.setAttribute("class", "dropdown")
     let text = `<a href="#" class="dropbtn">${menus[i].name}</a>`
+    liParen.innerHTML = text
+    ul.appendChild(liParen)
+    let child = menus[i].child_menu
     let drop = document.createElement("div")
     drop.setAttribute("class", "dropdown-content")
-    let child = menus[i].child_menu
-    li.innerHTML = text
-    li.appendChild(drop)
-    ul.appendChild(li)
-    let content = ''
-    for (let j = 0; j < child.length; j++){
-      content += `
-          <a href="#">${child[j]}</a>
-        `
-        drop.innerHTML = content
+
+    for(let j = 0; j < child.length; j++){
+        let itemDrop = document.createElement("div")
+        itemDrop.setAttribute("class", "item-drop")
+        let title = document.createElement("h2")
+        title.innerHTML = child[j].title
+
+        liParen.appendChild(drop)
+        drop.appendChild(itemDrop)
+        itemDrop.appendChild(title)
+
+        let ulChild = document.createElement("ul")
+        ulChild.setAttribute("class", "list-group")
+        let menuItem = child[j].menu_item
+        let item = ""
+        for(let k = 0; k < menuItem.length; k++ ){
+            item += `<li><a href="#">${menuItem[k]}</a></li>`
+            ulChild.innerHTML = item
+            itemDrop.appendChild(ulChild)
+        }
     }
 }
 

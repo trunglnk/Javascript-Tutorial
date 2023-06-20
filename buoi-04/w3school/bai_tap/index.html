@@ -41,14 +41,14 @@
     </div>
 
     <div class="icons">
-        <a href="#"><i class='bx bxs-user'></i></a>
+        <a id="toggleButton" ><i class='bx bxs-user'></i></a>
         <a href="#"><i class='bx bxs-chat'></i></a>
         <a href="#"><i class='bx bxs-search-alt-2'></i></a>
         <button id="login" class="btn btn-light"><a href="#">Login</a></button>
     </div>
 </div>
 <div class="banner">
-    <div class="banner-content">
+    <div class="banner-content" onmouseover="changeBanner()">
         <img src="banner.jpg">
         <div class="banner-search">
             <div class="banner-header">
@@ -88,16 +88,66 @@
         <!-- Tab panes -->
         <div class="tab-content">
             <div id="loginForm" class="container tab-pane active"><br>
-                <h3>HOME</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <form>
+                    <div class="mb-3 mt-3">
+                        <label for="email" class="form-label">Username or Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="username or email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="pwd" class="form-label">Password:</label>
+                        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                    </div>
+                    <button type="submit" id="loginBtn" class="btn btn-success">Sign in</button>
+                </form>
             </div>
             <div id="regForm" class="container tab-pane fade"><br>
-                <h3>Menu 1</h3>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <form>
+                    <div class="mb-3 mt-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" class="form-control" id="res_email" placeholder="Enter email" name="Email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="pwd" class="form-label">Username:</label>
+                        <input type="text" class="form-control" id="res_username" placeholder="Enter password" name="username">
+                    </div>
+                    <div class="mb-3">
+                        <label for="pwd" class="form-label">Password:</label>
+                        <input type="password" class="form-control" id="res_password" placeholder="Enter password" name="password">
+                    </div>
+                    <button type="submit" class="btn btn-success">Sign up</button>
+                </form>
             </div>
         </div>
     </div>
 </div>
+
+<!--language-->
+    <div class="card" id="myCard">
+        <div class="card-header">
+            Change Language
+        </div>
+        <div class="card-body">
+<!--            <div class="form-check">-->
+<!--                <input class="form-check-input" type="radio" name="language" id="radio1" value="option1">-->
+<!--                <label class="form-check-label" for="radio1">-->
+<!--                    Option 1-->
+<!--                </label>-->
+<!--            </div>-->
+<!--            <div class="form-check">-->
+<!--                <input class="form-check-input" type="radio" name="language" id="radio2" value="option2">-->
+<!--                <label class="form-check-label" for="radio2">-->
+<!--                    Option 2-->
+<!--                </label>-->
+<!--            </div>-->
+<!--            <div class="form-check">-->
+<!--                <input class="form-check-input" type="radio" name="language" id="radio3" value="option3">-->
+<!--                <label class="form-check-label" for="radio3">-->
+<!--                    Option 3-->
+<!--                </label>-->
+<!--            </div>-->
+        </div>
+    </div>
+
 <div class="content" style="height: 1000px"></div>
 <script src="main.js"></script>
 </body>

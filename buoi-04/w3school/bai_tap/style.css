@@ -168,9 +168,10 @@ a.list-group-item {
 .login-form {
     display: none;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 11%;
+    left: 80%;
+    right: 10px;
+    /*transform: translate(-4%, -50%);*/
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -188,9 +189,23 @@ a.list-group-item {
     margin-bottom: 10px;
 }
 
-.login-form button {
-    padding: 10px 20px;
-    background-color: #007bff;
+/*.login-form button {*/
+/*    padding: 10px 20px;*/
+/*    background-color: #007bff;*/
+/*    color: #fff;*/
+/*    border: none;*/
+/*}*/
+
+#myCard {
+    display: none;
+    width: 330px;
+    position: absolute;
+    right: 8px;
+}
+
+.card-header{
+    background-color: #94b974;
+    border: 1px solid #94b974;
+    text-align: center;
     color: #fff;
-    border: none;
 }

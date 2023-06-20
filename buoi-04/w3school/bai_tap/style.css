@@ -3,7 +3,7 @@ body{
     padding: 0;
 }
 
-.navbar {
+.navbar-me {
     /*background: rgba(0,0,0,.2);*/
     display: flex;
     justify-content: space-between;
@@ -16,7 +16,7 @@ body{
     z-index: 2;
 }
 
-.navbar:hover {
+.navbar-me:hover {
     background: rgba(0,0,0,.2);
 }
 
@@ -32,7 +32,7 @@ body{
 .bx{
     font-size: 26px;
     color: #fff;
-    padding: 0 12px;
+    padding: 21px 12px;
 }
 
 .menu {
@@ -101,8 +101,11 @@ li.dropdown.active {
     position: absolute;
 }
 
+#login{
+    margin-top: -15px;
+}
+
 #login a{
-    padding: 0 15px;
     text-decoration: none;
 }
 
@@ -124,5 +127,70 @@ li.dropdown.active {
 
 .banner-search h1{
     font-size: 45px;
+    max-width: 700px
 }
 
+a.list-group-item.text-uppercase {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+
+a.list-group-item {
+    background: rgba(40,44,39,.502);
+}
+
+.input-elevated{
+    font-size: 16px;
+    line-height: 1.5;
+    border: none;
+    background: #FFFFFF;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'><path fill='%23838D99' d='M13.22 14.63a8 8 0 1 1 1.41-1.41l4.29 4.29a1 1 0 1 1-1.41 1.41l-4.29-4.29zm-.66-2.07a6 6 0 1 0-8.49-8.49 6 6 0 0 0 8.49 8.49z'></path></svg>");
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    background-size: 20px 20px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
+    border-radius: 5px;
+    width: 100%;
+    padding: .5em 1em .5em 2.5em;
+}
+
+.input-elevated::placeholder{
+    color: #838D99;
+}
+
+.input-elevated:focus {
+    outline: none;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.16);
+}
+
+/*login*/
+.login-form {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.login-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+}

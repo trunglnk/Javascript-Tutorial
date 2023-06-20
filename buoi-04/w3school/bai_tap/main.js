@@ -77,5 +77,29 @@ document.addEventListener("click", function(event) {
 
 //Cuộn chuột đổi màu nav
 window.addEventListener('scroll', function() {
-    document.querySelector('.navbar').style.backgroundColor = "#71b171";
+    document.querySelector('.navbar-me').style.backgroundColor = "#71b171";
+});
+
+//Login
+// JavaScript để hiển thị và ẩn form đăng nhập
+const loginBtn = document.getElementById('login');
+const loginForm = document.querySelector('.login-form');
+// const loginFormBtn = document.getElementById('loginBtn');
+
+loginBtn.addEventListener('click', () => {
+    loginForm.style.display = 'block';
+});
+
+// loginFormBtn.addEventListener('click', (event) => {
+//     event.preventDefault();
+//     loginForm.style.display = 'none';
+// });
+
+document.addEventListener('click', (event) => {
+    const isClickInsideForm = loginForm.contains(event.target);
+    const isClickOnLoginBtn = loginBtn.contains(event.target);
+
+    if (!isClickInsideForm && !isClickOnLoginBtn) {
+        loginForm.style.display = 'none';
+    }
 });

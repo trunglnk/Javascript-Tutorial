@@ -16,6 +16,46 @@ const menus = [
             {
                 "title": "Share data",
                 "menu_item": ['Quick-start guide', 'Dataset classes', 'Data hosting', 'Standards', 'Become a publisher', 'Data quality', 'Data papers']
+            },
+            {
+                "title": "Use data",
+                "menu_item": ['Featured data use', 'Citation guidelines', 'GBIF citations', 'Citation widget']
+            }
+        ]
+    },
+    {
+        "name": 'Tools',
+        "url": "#",
+        "child_menu": [
+            {
+                "title": "Publising",
+                "menu_item": ['IPT', 'Data validator', 'Scientific Collections', 'Suggest a dataset', 'New data model']
+            },
+            {
+                "title": "Data access and use",
+                "menu_item": ['Hosted portals', 'Data processing', 'Derived datasets', 'rgbif', 'pygbif', 'MAXENT', 'Tools catalogue']
+            },
+            {
+                "title": "GBIF labs",
+                "menu_item": ['Species matching', 'Name parser', 'Sequence ID', 'Relative observation trends', 'GBIF data blog']
+            }
+        ]
+    },
+    {
+        "name": 'Community',
+        "url": "#",
+        "child_menu": [
+            {
+                "title": "Network",
+                "menu_item": ['Participant network', 'Nodes', 'Publishers', 'Network contacts', 'Community forum', 'alliance for biodiversity knowledge']
+            },
+            {
+                "title": "Volunteers",
+                "menu_item": ['Mentors', 'Ambassadors', 'Translators', 'Citizen scientists']
+            },
+            {
+                "title": "Activities",
+                "menu_item": ['Capacity enhancement', 'Programmes & projects', 'Training and learning resources', 'Data Use Club', 'Living Atlases']
             }
         ]
     },
@@ -23,23 +63,13 @@ const menus = [
         "name": 'About',
         "url": "#",
         "child_menu": [
-                {
-                    "title": "",
-                    "menu_item": ['News', 'Newsletters and lists', 'Events', 'Awards', 'Science Review', 'Data Use']
-                }
-                ]
-    },
-    {
-        "name": 'About2',
-        "url": "#",
-        "child_menu": [
             {
                 "title": "Inside Gbif",
-                "menu_item": ['News', 'Newsletters and lists', 'Events', 'Awards', 'Science Review', 'Data Use']
+                "menu_item": ['What is GBIF?', 'Become a member', 'Governance', 'Implementation plan', 'Work Programme', 'Funders', 'Partnerships', 'Release notes', 'Contacts']
             },
             {
                 "title": "News & outreach",
-                "menu_item": ['Becom  a member', 'Govermance', 'Funders']
+                "menu_item": ['News', 'Newsletters and lists', 'Events', 'Awards', 'Science Review', 'Data Use']
             }
         ]
     }

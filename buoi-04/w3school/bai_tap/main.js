@@ -174,16 +174,16 @@ window.addEventListener('scroll', function() {
 // JavaScript để hiển thị và ẩn form đăng nhập
 const loginBtn = document.getElementById('login');
 const loginForm = document.querySelector('.login-form');
-const loginFormBtn = document.getElementById('loginBtn');
+// const loginFormBtn = document.getElementById('loginBtn');
 
 loginBtn.addEventListener('click', () => {
     loginForm.style.display = 'block';
 });
 
-loginFormBtn.addEventListener('click', (event) => {
-    event.preventDefault();
-    loginForm.style.display = 'none';
-});
+// loginFormBtn.addEventListener('click', (event) => {
+//     event.preventDefault();
+//     loginForm.style.display = 'none';
+// });
 
 document.addEventListener('click', (event) => {
     const isClickInsideForm = loginForm.contains(event.target);

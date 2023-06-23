@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Function Parameter</title>
+</head>
+<body>
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+
+<script>
+    //Tham số mặc định
+    function myFunction(x, y) {
+        if (y === undefined) {
+            y = 2;
+        }
+        return x * y;
+    }
+    document.getElementById("demo").innerHTML = myFunction(4);
+
+    //Gía trị tham số mặc định
+    function numDefault(x, y = 10) {
+        return x + y;
+    }
+    document.getElementById("demo1").innerHTML = numDefault(5);
+
+    //Function Rest Parameter
+    //Tham số còn lại (...) cho phép một hàm coi số lượng đối số không xác định là một mảng:
+    function sum(...args) {
+        let sum = 0;
+        for (let arg of args) sum += arg;
+        return sum;
+    }
+
+    let j = sum(4, 9, 16, 25, 29, 100, 66, 77);
+
+    document.getElementById("demo2").innerHTML = j;
+
+    //Đối tượng đối số
+    function sumAll() {
+        let sum = 0;
+        for(let i = 0; i < arguments.length; i++) {
+            sum += arguments[i];
+        }
+        return sum;
+    }
+    document.getElementById("demo3").innerHTML = sumAll(1, 123, 500, 115, 44, 88);
+</script>
+
+</body>
+</html>

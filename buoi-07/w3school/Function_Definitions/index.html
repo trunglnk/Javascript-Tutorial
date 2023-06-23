@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Function Definitions</title>
+</head>
+<body>
+<!--Syntax:
+function functionName(parameters) {
+  // code to be executed
+}-->
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+<p id="demo6"></p>
+<script>
+  let x = sum(27, 10)
+  let home = document.querySelector("#demo").innerHTML = x
+
+  function sum(a,b){
+    return a * b
+  }
+
+  // Biểu thức hàm
+  // Hàm JavaScript cũng có thể được xác định bằng biểu thức.
+  // Một biểu thức hàm có thể được lưu trữ trong một biến:
+
+  let y = function (a,b){return a * b}
+  document.querySelector("#demo2").innerHTML = y(2, 3)
+
+  //Function Constructor
+  const myFunction = new Function("a", "b", "return a * b");
+  document.getElementById("demo3").innerHTML = myFunction(4, 3);
+
+  //function hoisting
+  //hàm JavaScript có thể được gọi trước khi chúng được khai báo:
+
+  //Hàm tự gọi
+  (function () {
+    document.getElementById("demo4").innerHTML = "Hello! I called myself";
+  })();
+
+  //
+  function newFunction(a, b) {
+    return a * b;
+  }
+  let c = newFunction(4, 3) * 2;
+  document.getElementById("demo5").innerHTML = x;
+
+  //Arrow Function
+  //Bạn không cần từ khóa hàm, từ khóa trả về và dấu ngoặc nhọn
+  const k = (x, y) => x * y;
+  document.getElementById("demo6").innerHTML = k(5, 5);
+</script>
+</body>
+</html>

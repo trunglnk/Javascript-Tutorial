@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Closures</title>
+</head>
+<body>
+<!--Các biến JavaScript có thể thuộc phạm vi cục bộ hoặc toàn cục.
+
+Các biến toàn cục có thể được tạo cục bộ (riêng tư) với các bao đóng.-->
+<button type="button" onclick="myFunction()">Count!</button>
+
+<p id="demo">0</p>
+<script>
+  //Variable Lifetime
+  //Các biến cục bộ có thời gian sống ngắn. Chúng được tạo khi hàm được gọi và bị xóa khi hàm kết thúc.
+
+  const add = (function () {
+    let counter = 0;
+    return function () {counter += 1; return counter;}
+  })();
+
+  function myFunction(){
+    document.getElementById("demo").innerHTML = add();
+  }
+</script>
+</body>
+</html>

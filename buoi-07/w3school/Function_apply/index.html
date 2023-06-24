@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function apply</title>
+</head>
+<body>
+<!--Với phương thức apply(), bạn có thể viết một phương thức có thể được sử dụng trên các đối tượng khác nhau.-->
+<!--Tương tự như phương thwusc call-->
+
+<p id="demo"></p>
+<p id="demo1"></p>
+
+<script>
+  const person = {
+    fullName: function() {
+      return this.firstName + " " + this.lastName;
+    }
+  }
+
+  const person1 = {
+    firstName:"John",
+    lastName: "Doe"
+  }
+
+  document.getElementById("demo").innerHTML = person.fullName.apply(person1);
+
+  //Sự khác biệt giữa call() và apply()
+  //Phương thức call() nhận các đối số một cách riêng biệt.
+  //Phương thức apply() nhận các đối số dưới dạng một mảng.
+
+
+  //Phương thức apply có đối số
+  const employee = {
+    fullName: function(city, country) {
+      return this.firstName + " " + this.lastName + "," + city + "," + country;
+    }
+  }
+
+  const employee1 = {
+    firstName:"John",
+    lastName: "Doe"
+  }
+
+  document.getElementById("demo1").innerHTML = employee.fullName.apply(employee1, ["Oslo", "Norway"]);
+</script>
+</body>
+</html>

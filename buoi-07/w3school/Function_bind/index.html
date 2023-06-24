@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function bind</title>
+</head>
+<body>
+<!--Với phương thức bind(), một đối tượng có thể mượn một phương thức từ một đối tượng khác.-->
+
+<p id="demo"></p>
+<p id="demo1"></p>
+
+<script>
+  //Ex: Đối tượng member mượn phương thức fullname từ đối tượng person:
+  const person = {
+    firstName:"John",
+    lastName: "Doe",
+    fullName: function() {
+      return this.firstName + " " + this.lastName;
+    }
+  }
+
+  const member = {
+    firstName:"Hege",
+    lastName: "Nilsen",
+  }
+
+  let fullName = person.fullName.bind(member);
+
+  document.getElementById("demo").innerHTML = fullName();
+
+  //
+  const employee = {
+    firstName:"John",
+    lastName: "Doe",
+    display: function() {
+      let x = document.getElementById("demo1");
+      x.innerHTML = this.firstName + " " + this.lastName;
+    }
+  }
+
+  let display = employee.display.bind(person);
+  setTimeout(display, 3000);
+</script>
+</body>
+</html>

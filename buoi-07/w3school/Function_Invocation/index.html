@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function Invocation</title>
+</head>
+<body>
+<!--Mã bên trong hàm JavaScript sẽ thực thi khi "thứ gì đó" gọi nó.-->
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+
+<script>
+  //Gọi một hàm dưới dạng 1 hàm
+  function demo(a, b){
+    return a + b
+  }
+  document.querySelector("#demo").innerHTML = demo(1, 2)
+
+  //đối tượng toàn cầu
+  let x = myFunction();
+  function myFunction() {
+    return this;
+  }
+  document.getElementById("demo1").innerHTML = x;
+
+  //Gọi một hàm như một phương thức
+  const myObject = {
+    firstName:"John",
+    lastName: "Doe",
+    fullName: function() {
+      return this.firstName + " " + this.lastName;
+    }
+  }
+  document.getElementById("demo2").innerHTML = myObject.fullName();
+
+  //gọi một hàm bằng hàm khởi tạo
+  function myFunc(arg1, arg2) {
+      this.firstName = arg1;
+      this.lastName  = arg2;
+  }
+
+  const myObj = new myFunc("John","Doe")
+  document.getElementById("demo3").innerHTML = myObj.firstName;
+
+</script>
+</body>
+</html>

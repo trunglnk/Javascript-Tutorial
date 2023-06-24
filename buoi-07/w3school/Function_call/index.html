@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function call</title>
+</head>
+<body>
+<!--Với phương thức call(), bạn có thể viết một phương thức có thể được sử dụng trên các đối tượng khác nhau.-->
+<!--Phương thức call() là một phương thức JavaScript được xác định trước.
+
+Nó có thể được sử dụng để gọi một phương thức với đối tượng chủ sở hữu làm đối số (tham số).-->
+
+<p id="demo"></p>
+
+<script>
+  const person = {
+    fullName: function(city, country) {
+      return this.firstName + " " + this.lastName + "," + city + "," + country;
+    }
+  }
+
+  const person1 = {
+    firstName:"John",
+    lastName: "Doe"
+  }
+
+  const person2 = {
+    firstName:"Mary",
+    lastName: "Doe"
+  }
+
+  document.getElementById("demo").innerHTML = person.fullName.call(person1, "Oslo", "Norway");
+</script>
+</body>
+</html>

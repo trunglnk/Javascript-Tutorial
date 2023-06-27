@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object Maps</title>
+</head>
+<body>
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+<p id="demo6"></p>
+<script>
+  //Bản đồ chứa các cặp khóa-giá trị trong đó các khóa có thể là bất kỳ kiểu dữ liệu nào.
+  /**
+   * Create a Map
+   * Truyền một mảng sang Map()
+   * Tạo Map mới và sử dụng Map.set()*/
+
+  //new Map()
+  // tạo Maps bằng cách chuyển một Mảng tới hàm tạo Map():
+  const fruits = new Map([
+          ["apples", 500],
+          ["bananas", 300],
+          ["oranges", 200]
+      ]);
+
+  //Map.set()
+  fruits.set("kiwi", 2710)
+
+  //Map.get()
+  document.getElementById("demo").innerHTML = fruits.get("kiwi");
+
+  //Map.size
+  document.getElementById("demo1").innerHTML = fruits.size;
+
+  //Map.delete
+  fruits.delete("kiwi")
+
+  //Map.clear() -> xóa toàn bộ phần tử khỏi map
+
+  //Map.has() -> trả về true nếu khóa tồn tại trong map
+  console.log(fruits.has("apples"))
+
+
+  //Maps are Objects
+  console.log(typeof fruits) //return object
+  console.log(fruits instanceof Map) //return true
+
+  //Map.forEach() -> Phương thức forEach() gọi một hàm gọi lại cho từng cặp khóa/giá trị trong Map
+
+  let text = "";
+  fruits.forEach (function(value, key) {
+      text += key + ' = ' + value + "<br>"
+  })
+
+  document.getElementById("demo2").innerHTML = text;
+
+
+  //Map.entries() -> Phương thức entry() trả về một đối tượng iterator với [key,values] trong Map
+
+  let text1 = "";
+  for (const x of fruits.entries()) {
+      text1 += x + "<br>";
+  }
+
+  document.getElementById("demo3").innerHTML = text1;
+
+
+  //Map.keys() -> Phương thức keys() trả về một đối tượng iterator với các khóa trong Map
+
+  let text2 = "";
+  for (const x of fruits.keys()) {
+      text2 += x + "<br>";
+  }
+
+  document.getElementById("demo4").innerHTML = text2;
+
+
+  //Map.values() -> Phương thức values() trả về một đối tượng iterator với các giá trị trong Map
+  let text3 = "";
+  for (const x of fruits.values()) {
+      text3 += x + "<br>";
+  }
+
+  document.getElementById("demo5").innerHTML = text3;
+
+
+  //Objects as Keys -> Có thể sử dụng các đối tượng làm khóa là một tính năng quan trọng của Map.
+  const dog = {name: 'Dog'};
+  const cat = {name: 'Cat'};
+  const pig = {name: 'Pig'};
+
+  // Create a Map
+  const animals = new Map();
+
+  // Add the Objects to the Map
+  animals.set(dog, 500);
+  animals.set(cat, 300);
+  animals.set(pig, 200);
+
+  document.getElementById("demo6").innerHTML = animals.get(dog);
+</script>
+</body>
+</html>

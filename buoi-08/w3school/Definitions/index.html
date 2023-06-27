@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+JavaScript Primitives(dữ liệu nguyên thủy) : string,number, boolean ,null, undefined, symbol, bigint
+
+- ĐỐI TƯỢNG LÀ BIẾN
+-->
+<p id="demo"></p>
+<script>
+    //ĐỐI TƯỢNG LÀ BIẾN
+    // Các biến JavaScript cũng có thể chứa nhiều giá trị.
+    // Các đối tượng cũng là các biến. Nhưng các đối tượng có thể chứa nhiều giá trị.
+    // Các giá trị đối tượng được viết dưới dạng cặp tên : giá trị (tên và giá trị được phân tách bằng dấu hai chấm)
+    //Thông thường khai báo các đối tượng bằng từ khóa const
+
+    const person = {
+        firstName: "Kien",
+        lastName: "Trung"
+    }
+    //Thêm thuộc tính
+    person.age = 27
+
+    //Đối tượng x không phải là bản sao của người. Nó là người. Cả x và người đều là cùng một đối tượng.
+
+    // Mọi thay đổi đối với x cũng sẽ thay đổi người, vì x và người là cùng một đối tượng.
+
+    const x = person
+    x.age = 24
+
+    document.querySelector("#demo").innerHTML = person.firstName + " " + person.lastName
+</script>
+</body>
+</html>

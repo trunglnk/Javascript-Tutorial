@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object Prototypes</title>
+</head>
+<body>
+<p id="demo"></p>
+<p id="demo1"></p>
+<script>
+
+  function Person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+  }
+
+  //thêm các thuộc tính (hoặc phương thức) mới vào tất cả các đối tượng hiện có của một kiểu nhất định.
+  Person.prototype.nationality = "English";
+
+
+  // thêm các phương thức mới vào hàm tạo đối tượng:
+  Person.prototype.name = function() {
+    return this.firstName + " " + this.lastName
+  };
+
+  const myFather = new Person("John", "Doe", 50, "blue");
+
+  document.getElementById("demo").innerHTML =
+          "The nationality of my father is " + myFather.nationality;
+
+  document.getElementById("demo1").innerHTML =
+          "The name of my father is " + myFather.name();
+</script>
+</body>
+</html>

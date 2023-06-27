@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object Properties</title>
+</head>
+<body>
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+  const person = {
+    firstname: "John",
+    lastname: "Doe",
+    age: 50,
+    eyeColor: "blue"
+  };
+
+  document.getElementById("demo").innerHTML = person.firstname + " is " + person.age + " years old."
+  // or:     document.getElementById("demo").innerHTML = person["firstname"] + " is " + person["age"] + " years old.";
+
+  //Add new property
+  person.nationality = "English";
+
+  //Xóa property
+  delete person["age"];
+
+  //FOR..IN lặp qua các thuộc tính của đối tượng
+  //Syntax: for (let variable in object) {code to be executed}
+
+  let text = ""
+  for(let x in person){
+      text += person[x] + " "
+  }
+  document.querySelector("#demo1").innerHTML = text
+
+
+  //Các đối tượng và mảng JavaScript lồng nhau
+  let x = "";
+  const myObj = {
+      name: "John",
+      age: 30,
+      cars: [
+          {name:"Ford", models:["Fiesta", "Focus", "Mustang"]},
+          {name:"BMW", models:["320", "X3", "X5"]},
+          {name:"Fiat", models:["500", "Panda"]}
+      ]
+  }
+
+  for (let i in myObj.cars) {
+      x += "<h2>" + myObj.cars[i].name + "</h2>";
+      for (let j in myObj.cars[i].models) {
+          x += myObj.cars[i].models[j] + "<br>";
+      }
+  }
+
+  document.getElementById("demo2").innerHTML = x;
+</script>
+</body>
+</html>

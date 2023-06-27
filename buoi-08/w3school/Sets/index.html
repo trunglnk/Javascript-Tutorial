@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object Sets</title>
+</head>
+<body>
+<p id="demo"></p>
+<p id="demo1"></p>
+<script>
+  // Tập hợp JavaScript là tập hợp các giá trị duy nhất.
+  //
+  // Mỗi giá trị chỉ có thể xảy ra một lần trong Tập hợp.
+  //
+  // Một Set có thể chứa bất kỳ giá trị nào của bất kỳ loại dữ liệu nào.
+
+  // Create a Set
+  const letters = new Set(["a","b","c"]);
+
+  //Phương thức forEach() gọi một hàm cho từng phần tử Set:
+  let text = ''
+  letters.forEach (function(value) {
+      text += value + "<br>";
+  })
+  document.getElementById("demo").innerHTML = text;
+
+  //Tạo một Tập hợp và thêm các giá trị bằng chữ
+  const num = new Set();
+
+  // Add Values to the Set
+  num.add(1);
+  num.add(2);
+  num.add(3);
+  num.add(4);
+
+  // Display set.size
+  document.getElementById("demo1").innerHTML = num.size;
+
+
+
+
+</script>
+</body>
+</html>

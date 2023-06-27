@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object Iterables</title>
+</head>
+<body>
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<script>
+  //Bạn có thể sử dụng vòng lặp for..of để lặp qua các phần tử của CHUỖI:
+  let name = "KienTrung"
+
+  let text = ""
+  for(let x of name){
+    text += x + "</br>"
+  }
+  document.querySelector("#demo").innerHTML = text
+
+  // Bạn có thể sử dụng vòng lặp for..of để lặp qua các phần tử của Mảng:
+
+  const letters = [1, 2, 3, 4, 5, 6];
+
+  // List all Elements
+  let text2 = "";
+  for (const x of letters) {
+    text2 += x + "<br>";
+  }
+
+  document.getElementById("demo1").innerHTML = text2;
+
+  //ITERABLES
+  function myNumbers() {
+    let n = 0;
+    return {
+      next: function() {
+        n += 10;
+        return {value:n, done:false};
+      }
+    };
+  }
+
+  // Create Iterable
+  const n = myNumbers();
+  n.next(); // 10
+  n.next(); // 20
+  n.next(); // 30
+
+  document.getElementById("demo2").innerHTML = n.next().value;
+</script>
+</body>
+</html>

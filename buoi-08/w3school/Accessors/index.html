@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object Accessors</title>
+</head>
+<body>
+<p id="demo"></p>
+<p id="demo1"></p>
+<script>
+  //GETTER
+  const person = {
+    firstName: "John",
+    lastName: "Doe",
+    language: "en",
+    get lang() {
+      return this.language;
+    }
+  };
+
+  // Display data from the object using a getter:
+  document.getElementById("demo").innerHTML = person.lang;
+
+  //SETTER
+  //sử dụng thuộc tính lang để đặt giá trị của thuộc tính LANGUAGE.
+
+  const person2 = {
+    firstName: "John",
+    lastName: "Doe",
+    language: "NO",
+    set lang(value) {
+      this.language = value;
+    }
+  };
+
+  // Set a property using set:
+  person2.lang = "en";
+
+  // Display data from the object:
+  document.getElementById("demo1").innerHTML = person2.language;
+</script>
+</body>
+</html>

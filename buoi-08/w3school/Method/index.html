@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object Method</title>
+</head>
+<body>
+<p id="demo"></p>
+<p id="demo1"></p>
+<script>
+    const person = {
+        firstName: "Kien",
+        lastName: 'Trung',
+        age: 24,
+        job: "dev",
+        info: function (){
+            return this.firstName + " " + this.lastName + " " + this.age + " year old"
+        }
+    }
+
+    //Add method và sử dụng các phương thức tích hợp
+    person.getJob = function (){
+        return (this.job).toUpperCase()
+    }
+
+    document.querySelector("#demo").innerHTML = person.info()
+    document.querySelector("#demo1").innerHTML = person.getJob()
+</script>
+</body>
+</html>

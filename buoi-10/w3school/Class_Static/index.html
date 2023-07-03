@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lớp tĩnh</title>
+</head>
+<body>
+<!--
+Các phương thức của lớp static được định nghĩa trên chính lớp đó.
+
+Bạn không thể gọi một static phương thức trên một đối tượng, chỉ trên một lớp đối tượng.
+-->
+<p id="demo"></p>
+
+<script>
+  class Car {
+    constructor(name) {
+      this.name = name;
+    }
+    static hello() {
+      return "Hello!!";
+    }
+  }
+
+  const myCar = new Car("Ford");
+
+  //You can call 'hello()' on the Car Class:
+  document.getElementById("demo").innerHTML = Car.hello();
+
+  // But NOT on  a Car Object:
+  // document.getElementById("demo").innerHTML = myCar.hello();
+  // this will raise an error.
+
+
+  //Nếu bạn muốn sử dụng đối tượng myCar bên trong staticphương thức, bạn có thể gửi nó dưới dạng tham số
+  // class Car {
+  //   constructor(name) {
+  //     this.name = name;
+  //   }
+  //   static hello(x) {
+  //     return "Hello " + x.name;
+  //   }
+  // }
+  // const myCar = new Car("Ford");
+  // document.getElementById("demo").innerHTML = Car.hello(myCar);
+</script>
+</body>
+</html>

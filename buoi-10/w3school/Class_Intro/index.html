@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class Intro</title>
+</head>
+<body>
+<!--Lớp JavaScript là mẫu cho Đối tượng JavaScript.-->
+<!--
+- Sử dụng từ khóa classđể tạo một lớp.
+
+- Luôn thêm một phương thức có tên constructor()
+
+Syntax:
+class ClassName {
+  constructor() { ... }
+}
+-->
+<p id="demo"></p>
+<script>
+  class Cars{
+    constructor(name, year) {
+      this.name = name;
+      this.year = year;
+    }
+    age() {
+      const date = new Date()
+      return date.getFullYear() - this.year
+  }
+  }
+
+  //Một lớp JavaScript không phải là một đối tượng.
+  // Nó là một khuôn mẫu cho các đối tượng JavaScript.
+
+  //Constructor Method
+  //Nó được thực thi tự động khi một đối tượng mới được tạo
+  // Nó được sử dụng để khởi tạo các thuộc tính đối tượng
+
+
+  //Class Methods
+  // Sử dụng từ khóa class để tạo một lớp.
+  // Luôn thêm phương thức constructor().
+  // Sau đó thêm bất kỳ method nào ở sau cũng dc.
+
+  //sử dụng lớp để tạo các đối tượng
+
+  const car1 = new Cars("Ford", 2021)
+  const car2 = new Cars("Kia", 2022)
+
+  document.querySelector("#demo").innerHTML = `My car is ${car1.name} and  ${car2.name}  ${car1.age()} years old`
+</script>
+</body>
+</html>

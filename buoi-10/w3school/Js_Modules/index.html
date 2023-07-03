@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modules</title>
+</head>
+<body>
+<!--Các mô-đun JavaScript cho phép bạn chia mã của mình thành các tệp riêng biệt.
+    - Điều này giúp duy trì cơ sở mã dễ dàng hơn.
+
+    - Các mô-đun được nhập từ các tệp bên ngoài với import câu lệnh.
+
+    - Các mô-đun cũng dựa type="module" vào thẻ <script>.
+-->
+
+<!--
+Export:
+Các mô-đun có functions or variables có thể được lưu trữ trong bất kỳ tệp bên ngoài nào.
+
+Có hai loại exports: Named Exports and Default Exports.
+-->
+
+<p id="demo"></p>
+<script type="module">
+    import message from "./main.js";
+    document.querySelector("#demo").innerHTML = message
+</script>
+</body>
+</html>

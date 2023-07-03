@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đối tượng toán học</title>
+</head>
+<body>
+<!--Math object JavaScript cho phép bạn thực hiện các tác vụ toán học trên các con số-->
+<script>
+  // Không giống như các đối tượng khác, đối tượng Math không có hàm tạo.
+// Đối tượng Math là tĩnh.
+// Tất cả các phương thức và thuộc tính có thể được sử dụng mà không cần tạo đối tượng Math trước.
+
+  //Math.round(x) -> trả về số nguyên gần nhất:
+  Math.round(4.6);
+
+  //Math.ceil(x) -> trả về giá trị của x được làm tròn đến số nguyên gần nhất
+  Math.ceil(4.9); // 5
+
+  //Math.floor(x) -> trả về giá trị của x được làm tròn xuống số nguyên gần nhất
+  Math.floor(4.9); //4
+
+  //Math.trunc(x) -> trả về phần nguyên của x:
+  Math.trunc(4.9); //4
+
+  //Math.sign(x) -> trả về nếu x là âm, null hoặc dương:
+  Math.sign(-4); // -1
+
+  //Math.pow(x, y) -> trả về giá trị của x thành lũy thừa của y
+  Math.pow(8, 2); //64
+
+  //Math.sqrt(x) -> trả về căn bậc hai của x:
+  Math.sqrt(64); //8
+
+  //Math.abs(x) -> trả về giá trị tuyệt đối (dương) của x:
+  Math.abs(-4.7); //4.7
+
+  //Math.sin(x) -> trả về sin (giá trị từ -1 đến 1) của góc x (tính bằng radian)
+  Math.sin(90 * Math.PI / 180) //1
+
+  //Math.cos(x) -> trả về cosin (giá trị từ -1 đến 1) của góc x (tính bằng radian)
+  Math.cos(0 * Math.PI / 180); //1
+
+  //Math.min() và Math.max() có thể được sử dụng để tìm giá trị thấp nhất hoặc cao nhất trong danh sách các đối số:
+  Math.min(0, 150, 30, 20, -8, -200); //-200
+  Math.max(0, 150, 30, 20, -8, -200); //150
+
+  //Math.random() trả về một số ngẫu nhiên trong khoảng từ 0 (bao gồm) đến 1
+  Math.random()
+
+  //Math.log(x) return logarit tự nhiên của x.
+  Math.log(1) //0
+
+  //Math.log2(x) trả về logarit cơ số 2 của x.
+  Math.log2(8) //3
+
+  //Math.log10(x) trả về logarit cơ số 10 của x.
+  Math.log10(1000) //3
+</script>
+</body>
+</html>

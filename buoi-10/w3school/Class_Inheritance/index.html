@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class kế thừa</title>
+</head>
+<body>
+<!--
+Để tạo kế thừa lớp, hãy sử dụng extends từ khóa.
+
+Một lớp được tạo bằng class inhertance kế thừa tất cả các phương thức từ lớp khác:
+
+Phương thức super() tham chiếu đến lớp cha
+- Bằng cách gọi super() phương thức trong constructor,
+chúng ta gọi constructor của cha mẹ và có quyền truy cập vào các thuộc tính và phương thức của cha mẹ.
+-->
+<p id="demo"></p>
+<p id="demo1"></p>
+<script>
+    class Cars {
+        constructor(brand) {
+            this.brand = brand
+        }
+        present(){
+            return `I have a ${this.brand}`
+        }
+    }
+
+    class Models extends Cars{
+        constructor(brand, model) {
+            super(brand);
+            this.model = model
+        }
+        show(){
+            return `${this.present()} , it's a ${this.model}`
+        }
+    }
+
+    let myCar = new Models("Mazda", "CX5")
+    document.querySelector("#demo").innerHTML = myCar.show()
+
+
+    //Getter và Setter
+    class Car {
+        constructor(brand) {
+            this.carname = brand;
+        }
+        get cnam() {
+            return this.carname;
+        }
+        set cnam(x) {
+            this.carname = x;
+        }
+    }
+
+    const myCar1 = new Car("Ford");
+
+    document.getElementById("demo1").innerHTML = myCar1.cnam;
+</script>
+</body>
+</html>

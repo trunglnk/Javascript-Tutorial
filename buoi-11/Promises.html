@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Promises</title>
+</head>
+<body>
+<p id="demo"></p>
+<script>
+  //JavaScript Promise Object
+  //Một đối tượng JavaScript Promise chứa cả mã sản xuất và lệnh gọi đến mã tiêu thụ
+
+
+  //Promise Object Properties(thuộc tính đối tượng promise)
+  //Một đối tượng Promise JavaScript có thể là:
+  // Pending
+  // Fulfilled
+  // Rejected
+
+  function myDisplayer(some) {
+    document.getElementById("demo").innerHTML = some;
+  }
+
+  let myPromise = new Promise(function(myResolve, myReject) {
+    let x = 0;
+
+// some code (try to change x to 5)
+
+    if (x == 0) {
+      myResolve("OK");
+    } else {
+      myReject("Error");
+    }
+  });
+
+  myPromise.then(
+          function(value) {myDisplayer(value);},
+          function(error) {myDisplayer(error);}
+  );
+</script>
+</body>
+</html>

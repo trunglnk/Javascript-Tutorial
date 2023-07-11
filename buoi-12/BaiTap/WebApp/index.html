@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web Application</title>
+  <style>
+    #searchInput {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+<h2>List of Posts</h2>
+<input type="text" id="searchInput" placeholder="Search by title">
+<select id="authorFilter">
+  <option value="">All Authors</option>
+</select>
+<ul id="postList"></ul>
+
+<script>
+  // Fetch data từ sever
+  function fetchData() {
+    fetch('server.php')
+            .then(response => response.json())
+            .then(data => {
+              const posts = data.posts;
+              const users = data.users;
+
+              displayPosts(posts);
+              populateAuthors(users);
+            })
+            .catch(error => {
+              console.log(error);
+            });
+  }
+
+  // List post
+  function displayPosts(posts) {
+    const postList = document.getElementById('postList');
+    postList.innerHTML = '';
+
+    posts.forEach(post => {
+      const listItem = document.createElement('li');
+      listItem.textContent = post.title + ' - ' + post.content;
+      postList.appendChild(listItem);
+    });
+  }
+
+  // Function to populate authors in the select dropdown
+  function populateAuthors(users) {
+    const authorFilter = document.getElementById('authorFilter');
+
+    users.forEach(user => {
+      const option = document.createElement('option');
+      option.value = user.id;
+      option.textContent = user.username;
+      authorFilter.appendChild(option);
+    });
+  }
+
+  // Filter search
+  function filterPostsByTitle() {
+    const searchInput = document.getElementById('searchInput');
+    const searchValue = searchInput.value.toLowerCase();
+
+    fetch('server.php')
+            .then(response => response.json())
+            .then(data => {
+              const posts = data.posts;
+              const filteredPosts = posts.filter(post => post.title.toLowerCase().includes(searchValue));
+              displayPosts(filteredPosts);
+            })
+            .catch(error => {
+              console.log(error);
+            });
+  }
+
+  // Filter Author
+  function filterPostsByAuthor() {
+    const authorFilter = document.getElementById('authorFilter');
+    const selectedAuthorId = authorFilter.value;
+
+    fetch('server.php')
+            .then(response => response.json())
+            .then(data => {
+              const posts = data.posts;
+
+              if (selectedAuthorId === '') {
+                displayPosts(posts);
+              } else {
+                const filteredPosts = posts.filter(post => post.author_id === selectedAuthorId);
+                displayPosts(filteredPosts);
+              }
+            })
+            .catch(error => {
+              console.log(error);
+            });
+  }
+
+  // Fetch data
+  document.addEventListener('DOMContentLoaded', () => {
+    fetchData();
+  });
+
+  // Event listeners for search input and author filter
+  const searchInput = document.getElementById('searchInput');
+  const authorFilter = document.getElementById('authorFilter');
+
+  searchInput.addEventListener('input', () => {
+    filterPostsByTitle();
+  });
+
+  authorFilter.addEventListener('change', () => {
+    filterPostsByAuthor();
+  });
+</script>
+</body>
+</html>

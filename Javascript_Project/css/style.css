@@ -225,3 +225,6 @@ a:hover{
     width: 100%;
 }
 
+.am, .amChiTiet {
+    display: inline-block;
+}

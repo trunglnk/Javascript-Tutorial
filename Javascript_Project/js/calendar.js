@@ -69,6 +69,7 @@ let month = date.getMonth(); // Lấy tháng hiện tại (0 - 11)
 
 const day = document.querySelector(".calendar-dates");
 const currdate = document.querySelector(".vncal-header-title h4");
+// const currdateBoxDetail = document.querySelector(".vncal-header-title h2");
 const prenexIcons = document.querySelectorAll(".vncal-header span");
 
 const months = [
@@ -226,12 +227,17 @@ tdList.forEach(function(td) {
         let amFull = this.querySelector('.am').textContent;
         let am = amFull.split(' ')[0].trim();
         let chiTiet = amFull.substr(am.length).trim();
+        let titleFull = this.querySelector('td a').title;
+        let titleMonth = titleFull.split(' ')[6].trim();
+        let titleYear = titleFull.split(' ')[8].trim();
 
         // Tạo đối tượng chứa dữ liệu
         let data = {
             ngayDuong: duong,
             ngayAm: am,
-            ngayChiTiet: chiTiet
+            ngayChiTiet: chiTiet,
+            titleMonth: titleMonth,
+            titleYear: titleYear
         };
 
         // In ra đối tượng chứa dữ liệu
@@ -250,12 +256,17 @@ if (currentTd) {
     let amFull = currentTd.querySelector('.am').textContent;
     let am = amFull.split(' ')[0].trim();
     let chiTiet = amFull.substr(am.length).trim();
+    let titleFull = currentTd.querySelector('td a').title;
+    let titleMonth = titleFull.split(' ')[6].trim();
+    let titleYear = titleFull.split(' ')[8].trim();
 
     // Tạo đối tượng chứa dữ liệu
     let data = {
         ngayDuong: duong,
         ngayAm: am,
-        ngayChiTiet: chiTiet
+        ngayChiTiet: chiTiet,
+        titleMonth: titleMonth,
+        titleYear: titleYear
     };
 
     // In ra đối tượng chứa dữ liệu
@@ -269,11 +280,16 @@ if (currentTd) {
         let amFull = firstTd.querySelector('.am').textContent;
         let am = amFull.split(' ')[0].trim();
         let chiTiet = amFull.substr(am.length).trim();
+        let titleFull = firstTd.querySelector('td a').title;
+        let titleMonth = titleFull.split(' ')[6].trim();
+        let titleYear = titleFull.split(' ')[8].trim();
 
         let data = {
             ngayDuong: duong,
             ngayAm: am,
-            ngayChiTiet: chiTiet
+            ngayChiTiet: chiTiet,
+            titleMonth: titleMonth,
+            titleYear: titleYear
         };
 
         console.log(data);
@@ -283,7 +299,10 @@ if (currentTd) {
 
 function dateDetail(date){
     let dateHeader = document.querySelector(".vncal-header-titles h2")
-    dateHeader.innerHTML = `ÂM LỊCH NGÀY ${date.ngayDuong} THÁNG 7 2023`
+    dateHeader.innerHTML = `ÂM LỊCH NGÀY ${date.ngayDuong} THÁNG ${date.titleMonth} ${date.titleYear}`
+
+    let titleDuong = document.querySelector(".titleDuong")
+    titleDuong.innerHTML = `Tháng ${date.titleMonth} Năm ${date.titleYear}`
 
     let ngayDuong = document.querySelector(".vncal-days .duong")
     ngayDuong.innerHTML = date.ngayDuong
@@ -301,7 +320,7 @@ function addClickEventToTDs() {
     // Lấy tất cả các thẻ td trong bảng
     let tdList = document.querySelectorAll('.vncal td');
 
-    // Lặp qua từng thẻ td và thêm sự kiện click
+// Lặp qua từng thẻ td và thêm sự kiện click
     tdList.forEach(function(td) {
         td.addEventListener('click', function() {
             // Lấy dữ liệu từ các phần tử con bên trong thẻ td
@@ -309,16 +328,22 @@ function addClickEventToTDs() {
             let amFull = this.querySelector('.am').textContent;
             let am = amFull.split(' ')[0].trim();
             let chiTiet = amFull.substr(am.length).trim();
+            let titleFull = this.querySelector('td a').title;
+            let titleMonth = titleFull.split(' ')[6].trim();
+            let titleYear = titleFull.split(' ')[8].trim();
 
             // Tạo đối tượng chứa dữ liệu
             let data = {
                 ngayDuong: duong,
                 ngayAm: am,
-                ngayChiTiet: chiTiet
+                ngayChiTiet: chiTiet,
+                titleMonth: titleMonth,
+                titleYear: titleYear
             };
 
+            // In ra đối tượng chứa dữ liệu
             console.log(data);
-            dateDetail(data)
+            dateDetail(data);
         });
     });
 }
